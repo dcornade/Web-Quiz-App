@@ -432,7 +432,7 @@ body {
 	padding: 0;
 	font-size: .8vw;
 	color: red;
-	top: 13.6vw;
+	top: 13.7vw;
 	left: 2vw;
 }
 #nameshow{
@@ -482,4 +482,45 @@ body {
 	font-size: 1.5vw;
 	color: #6890FF;
 	overflow: hidden;
+}
+#timer{
+	position: absolute;
+	top: -5vw;
+	height: 3vw;
+	left: 41.5vw;
+	width: 17vw;
+	background-color: white;
+	overflow: hidden;
+}
+.timerhead{
+	position: absolute;
+	margin: 0;
+	top: .2vw;
+	left: 0vw;
+	font-size: 2vw;
+	color: #6890FF;
+	font-weight: bolder;
+}
+#time1{
+	position: absolute;
+	margin: 0;
+	top: 0vw;
+	left: 10vw;
+	font-size: 2.5vw;
+}
+.timecolon{
+	position: absolute;
+	margin: 0;
+	top: -.2vw;
+	left: 13vw;
+	font-size: 2.5vw;
+	padding: 0;
+}
+#time2{
+	position: absolute;
+	margin: 0;
+	top: 0vw;
+	left: 14vw;
+	font-size: 2.5vw;
+	padding: 0;
 }

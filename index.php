@@ -65,5 +65,11 @@
 		<p id="sname"></p>
 		<p id="rnumber"></p>
 	</div>
+	<div id="timer">
+		<p class="timerhead">Time  Left : </p>
+		<p id="time1">00</p>
+		<p class="timecolon">:</p>
+		<p id="time2">00</p>
+	</div>
 </body>
 </html>

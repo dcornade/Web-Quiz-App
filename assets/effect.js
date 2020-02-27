@@ -3,7 +3,9 @@ var menu1_chk=1;
 var dcon = "";
 var sname = "";
 var roll = "";
-var time = 0;
+var ctime = 0;
+var csec = 0;
+var clake;
 function logoin(){
 	izero();
 	document.getElementById("clogo").style.transition= ".6s";
@@ -191,6 +193,7 @@ function tranof(){
 	document.getElementById("menutxt2").style.transition= "none";
 	document.getElementById("nameshow").style.transition= "none";
 	document.getElementById("img_con1").style.transition= "none";
+	document.getElementById("timer").style.transition= "none";
 }
 function izero(){
 	document.getElementById("i1").value= "";
@@ -316,13 +319,47 @@ function nameout(){
 	document.getElementById("name1").style.top= "-30vw";
 	sname = document.getElementById("i3").value.toUpperCase();
 	roll = document.getElementById("i4").value.toUpperCase();
-	time = document.getElementById("i5").value;
-	nameshow();
+	ctime = document.getElementById("i5").value;
+	setTimeout(nameshow,600);
+	setTimeout(timershow,600);
 }
 function nameshow(){
 	document.getElementById("nameshow").style.transition= ".6s";
 	document.getElementById("nameshow").style.left= "0vw";
 	document.getElementById("sname").innerHTML= sname;
 	document.getElementById("rnumber").innerHTML= roll;
+}
+function timershow(){
+	document.getElementById("timer").style.transition= ".6s";
+	document.getElementById("timer").style.top= "0vw";
+	timerinit();
 	setTimeout(tranof,800);
+}
+function timerinit(){
+	if((ctime<=0)||(ctime>99)||(isNaN(ctime))){
+		ctime = 25;
+	}
+	clake = setInterval(timeroperate,1000);
+}
+function timeroperate(){
+	if(ctime < 10){
+		document.getElementById("time1").innerHTML = "0" + ctime;
+	}else{
+		document.getElementById("time1").innerHTML = ctime;
+	}
+	if(csec < 10){
+		document.getElementById("time2").innerHTML = "0" + csec;
+	}else{
+		document.getElementById("time2").innerHTML = csec;
+	}
+	if((ctime == 0)&&(csec == 0)){
+		timestop();
+	}else if(csec == 0){
+		csec = 60;
+		ctime--;
+	}
+	csec--;
+}
+function timestop(){
+	clearInterval(clake);
 }
