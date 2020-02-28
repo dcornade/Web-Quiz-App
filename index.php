@@ -71,5 +71,12 @@
 		<p class="timecolon">:</p>
 		<p id="time2">00</p>
 	</div>
+	<div id="buttonplace">
+	</div>
+	<div id="navplace">
+		<button id="left1" type="submit">< Previous</button>
+		<button id="right1" type="submit">Next ></button>
+		<button id="submit1" type="submit">Submit</button>
+	</div>
 </body>
 </html>

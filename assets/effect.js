@@ -194,6 +194,8 @@ function tranof(){
 	document.getElementById("nameshow").style.transition= "none";
 	document.getElementById("img_con1").style.transition= "none";
 	document.getElementById("timer").style.transition= "none";
+	document.getElementById("buttonplace").style.transition= "none";
+	document.getElementById("navplace").style.transition= "none";
 }
 function izero(){
 	document.getElementById("i1").value= "";
@@ -328,12 +330,14 @@ function nameshow(){
 	document.getElementById("nameshow").style.left= "0vw";
 	document.getElementById("sname").innerHTML= sname;
 	document.getElementById("rnumber").innerHTML= roll;
+	buttonplacecalc();
+	buttonplace();
+	buttonplace();
 }
 function timershow(){
 	document.getElementById("timer").style.transition= ".6s";
 	document.getElementById("timer").style.top= "0vw";
 	timerinit();
-	setTimeout(tranof,800);
 }
 function timerinit(){
 	if((ctime<=0)||(ctime>99)||(isNaN(ctime))){
@@ -362,4 +366,26 @@ function timeroperate(){
 }
 function timestop(){
 	clearInterval(clake);
+}
+function buttonplacecalc(){
+	var i = 1, v = 0, c = .5, k = 0;
+	var id1 = "btnplid";
+	for(i=1; i<=50; i++){
+		if(i<26){
+			document.getElementById("buttonplace").innerHTML =  document.getElementById("buttonplace").innerHTML + '<button class="btni" id="' + id1 + i + '" type="submit">' + i + '</button>';
+			document.getElementById(id1+i).style.left = v + c + "vw";
+			v = v + 2.5 + c;
+		}else{
+			document.getElementById("buttonplace").innerHTML = document.getElementById("buttonplace").innerHTML + '<button class="btni1" id="' + id1 + i + '" type="submit">' + i + '</button>';
+			document.getElementById(id1+i).style.left = k + .5 + "vw";
+			k = k + 2.5 + c;
+		}
+	}
+}
+function buttonplace(){
+	document.getElementById("buttonplace").style.transition = "2s";
+	document.getElementById("buttonplace").style.right = "0vw";
+	document.getElementById("navplace").style.transition = ".6s";
+	document.getElementById("navplace").style.left = "0vw";
+	setTimeout(tranof,2000);
 }
