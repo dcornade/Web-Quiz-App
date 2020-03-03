@@ -558,6 +558,9 @@ body {
 .btni:active{
 	box-shadow: none;
 }
+.btni:hover{
+	cursor: pointer;
+}
 .btni1{
 	position: absolute;
 	background-color: #6890FF;
@@ -575,6 +578,9 @@ body {
 }
 .btni1:active{
 	box-shadow: none;
+}
+.btni1:hover{
+	cursor: pointer;
 }
 #navplace{
 	position: absolute;
@@ -648,4 +654,131 @@ body {
 }
 #submit1:active{
 	box-shadow: none;
+}
+.quepanel{
+	position: absolute;
+	height: 21vw;
+	left: -60vw;
+	top: 3.5vw;
+	width: 50vw;
+	background-color: white;
+	box-shadow: 0 2px 2px 1px grey;
+	overflow: hidden;
+}
+.que1-1{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	color: #4D6178;
+	left: .5vw;
+	top: .3vw;
+}
+#quenum{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	color: #4D6178;
+	left: 11vw;
+	top: .4vw;
+}
+.quesum{
+	position: absolute;
+	top: 2.5vw;
+	left: 0vw;
+	background-color: #F9F9F9;
+	height: 8vw;
+	width: 50vw;
+}
+.queimg{
+	position: absolute;
+	top: .2vw;
+	left: .3vw;
+	height: 2vw
+}
+.quesim{
+	position: absolute;
+	top: 0vw;
+	left: 0vw;
+	background-color: #F9F9F9;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	padding-top: .5vw;
+	font-size: 1.5vw;
+}
+.options1{
+	position: absolute;
+	top: 10.5vw;
+	width: 50vw;
+}
+.opthead{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	color: #4D6178;
+	white-space: nowrap;
+	text-align: center;
+	width: 50vw;
+}
+.optbtn{
+	position: absolute;
+	width: 24vw;
+	height: 3.5vw;
+	font-size: 1vw;
+	background-color: #E0E5Eb;
+	border: none;
+	box-shadow: 0 2px 2px 1px grey;
+}
+.optbtn:active{
+	box-shadow: none;
+}
+#opt1{
+	top: 2vw;
+	left: .5vw;
+}
+#opt2{
+	top: 2vw;
+	left: 25.3vw;
+}
+#opt3{
+	top: 6.3vw;
+	left: .5vw;
+}
+#opt4{
+	top: 6.3vw;
+	left: 25.3vw;
+}
+#opt12{
+	top: 2vw;
+	left: .5vw;
+}
+#opt22{
+	top: 2vw;
+	left: 25.3vw;
+}
+#opt32{
+	top: 6.3vw;
+	left: .5vw;
+}
+#opt42{
+	top: 6.3vw;
+	left: 25.3vw;
+}
+#quenum2{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5vw;
+	font-weight: bolder;
+	color: #4D6178;
+	left: 11vw;
+	top: .4vw;
 }

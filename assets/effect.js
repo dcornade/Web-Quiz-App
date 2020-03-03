@@ -6,6 +6,8 @@ var roll = "";
 var ctime = 0;
 var csec = 0;
 var clake;
+var divchk = 1;
+var qno = 1;
 function logoin(){
 	izero();
 	document.getElementById("clogo").style.transition= ".6s";
@@ -196,6 +198,8 @@ function tranof(){
 	document.getElementById("timer").style.transition= "none";
 	document.getElementById("buttonplace").style.transition= "none";
 	document.getElementById("navplace").style.transition= "none";
+	document.getElementById("quepanel2").style.transition = "none";
+	document.getElementById("quepanel1").style.transition = "none";
 }
 function izero(){
 	document.getElementById("i1").value= "";
@@ -265,7 +269,7 @@ function errorlogbck(){
 	document.getElementById("error1id").style.zIndex= "4";
 	document.getElementById("error1id").style.overflow= "hidden";
 	document.getElementById("error1id").style.position= "fixed";
-	document.body.style.overflow= "visible";
+	document.body.style.overflowY= "visible";
 	setTimeout(errorlogmenubck,100);
 }
 function errorlogmenubck(){
@@ -333,6 +337,7 @@ function nameshow(){
 	buttonplacecalc();
 	buttonplace();
 	buttonplace();
+	divent();
 }
 function timershow(){
 	document.getElementById("timer").style.transition= ".6s";
@@ -388,4 +393,91 @@ function buttonplace(){
 	document.getElementById("navplace").style.transition = ".6s";
 	document.getElementById("navplace").style.left = "0vw";
 	setTimeout(tranof,2000);
+	btnchk();
+}
+function divent(){
+	document.getElementById("quepanel1").style.transition = "1.5s";
+	document.getElementById("quepanel1").style.left = "2vw";
+}
+function navleft(){
+	document.getElementById("left1").style.boxShadow="none";
+	if(divchk == 1){
+		document.getElementById("quepanel2").style.left = "-60vw";
+		document.getElementById("quepanel1").style.transition = "1s";
+		document.getElementById("quepanel1").style.left = "160vw";
+		setTimeout(navleftsettle,300);
+		setTimeout(tranof,1300);
+		divchk = 2;
+	}else{
+		document.getElementById("quepanel1").style.left = "-60vw";
+		document.getElementById("quepanel2").style.transition = "1s";
+		document.getElementById("quepanel2").style.left = "160vw";
+		setTimeout(navleftsettle,300);
+		setTimeout(tranof,1300);
+		divchk = 1;
+	}
+}
+function navleftsettle(){
+	qno--;
+	if(divchk == 1) {
+		document.getElementById("quepanel1").style.transition = "1s";
+		document.getElementById("quepanel1").style.left = "2vw";
+		document.getElementById("quenum").innerHTML = qno;
+		document.getElementById("quenum2").innerHTML = qno;
+	}else{
+		document.getElementById("quepanel2").style.transition = "1s";
+		document.getElementById("quepanel2").style.left = "2vw";
+		document.getElementById("quenum").innerHTML = qno;
+		document.getElementById("quenum2").innerHTML = qno;
+	}
+	btnchk();
+}
+function navright(){
+	document.getElementById("right1").style.boxShadow="none";
+	if(divchk == 1){
+		document.getElementById("quepanel1").style.left = "-60vw";
+		document.getElementById("quepanel1").style.transition = "1s";
+		document.getElementById("quepanel2").style.left = "160vw";
+		setTimeout(navrightsettle,100);
+		setTimeout(tranof,1100);
+		divchk = 2;
+	}else{
+		document.getElementById("quepanel2").style.left = "-60vw";
+		document.getElementById("quepanel2").style.transition = "1s";
+		document.getElementById("quepanel1").style.left = "160vw";
+		setTimeout(navrightsettle,100);
+		setTimeout(tranof,1300);
+		divchk = 1;
+	}
+}
+function navrightsettle(){
+	qno++;
+	if(divchk == 1) {
+		document.getElementById("quepanel1").style.transition = "1s";
+		document.getElementById("quepanel1").style.left = "2vw";
+		document.getElementById("quenum").innerHTML = qno;
+		document.getElementById("quenum2").innerHTML = qno;
+	}else{
+		document.getElementById("quepanel2").style.transition = "1s";
+		document.getElementById("quepanel2").style.left = "2vw";
+		document.getElementById("quenum").innerHTML = qno;
+		document.getElementById("quenum2").innerHTML = qno;
+	}
+	btnchk();
+}
+function btnchk(){
+	if(qno >= 50){
+		document.getElementById("right1").disabled = true;
+		document.getElementById("right1").style.boxShadow = "none";
+	}else{
+		document.getElementById("right1").disabled =  false;
+		document.getElementById("right1").style.boxShadow = "0 2px 2px 1px grey";
+	}
+	if(qno <= 1){
+		document.getElementById("left1").disabled = true;
+		document.getElementById("left1").style.boxShadow = "none";
+	}else{
+		document.getElementById("left1").disabled = false;
+		document.getElementById("left1").style.boxShadow = "0 2px 2px 1px grey";
+	}
 }

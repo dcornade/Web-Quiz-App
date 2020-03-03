@@ -74,9 +74,37 @@
 	<div id="buttonplace">
 	</div>
 	<div id="navplace">
-		<button id="left1" type="submit">< Previous</button>
-		<button id="right1" type="submit">Next ></button>
+		<button id="left1" type="submit" onclick="navleft()">< Previous</button>
+		<button id="right1" type="submit" onclick="navright()">Next ></button>
 		<button id="submit1" type="submit">Submit</button>
+	</div>
+	<div class="quepanel" id="quepanel1">
+		<p class="que1-1">Question No. : -</p>
+		<p id="quenum">1</p>
+		<div class="quesum">
+			<p class="quesim">Here is a question which will need to be answered and users have to choose the right options from below i mean i can write more of this sentence to see if it will effect on it here are some text</p>	
+		</div>
+		<div class="options1" id="option1">
+			<p class="opthead">---Options---</p>
+			<button class="optbtn" id="opt1">Only one method can be called using a delegate.</button>
+			<button class="optbtn" id="opt2">Hey this is second button</button>
+			<button class="optbtn" id="opt3">hey This is Third button</button>
+			<button class="optbtn" id="opt4">Hey this is Fourth Button</button>
+		</div>
+	</div>
+	<div class="quepanel" id="quepanel2">
+		<p class="que1-1">Question No. : -</p>
+		<p id="quenum2">1</p>
+		<div class="quesum">
+			<p class="quesim">Here is a question which will need to be answered and users have to choose the right options from below i mean i can write more of this sentence to see if it will effect on it here are some text</p>	
+		</div>
+		<div class="options1" id="option2">
+			<p class="opthead">---Options---</p>
+			<button class="optbtn" id="opt12">Only one method can be called using a delegate.</button>
+			<button class="optbtn" id="opt22">Hey this is second button</button>
+			<button class="optbtn" id="opt32">hey This is Third button</button>
+			<button class="optbtn" id="opt42">Hey this is Fourth Button</button>
+		</div>
 	</div>
 </body>
 </html>
