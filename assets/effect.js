@@ -8,6 +8,7 @@ var csec = 0;
 var clake;
 var divchk = 1;
 var qno = 1;
+var qno1;
 function logoin(){
 	izero();
 	document.getElementById("clogo").style.transition= ".6s";
@@ -377,11 +378,11 @@ function buttonplacecalc(){
 	var id1 = "btnplid";
 	for(i=1; i<=50; i++){
 		if(i<26){
-			document.getElementById("buttonplace").innerHTML =  document.getElementById("buttonplace").innerHTML + '<button class="btni" id="' + id1 + i + '" type="submit">' + i + '</button>';
+			document.getElementById("buttonplace").innerHTML =  document.getElementById("buttonplace").innerHTML + '<button class="btni" id="' + id1 + i + '" value='+i+' onClick=btnnav(this.value) type="submit">' + i + '</button>';
 			document.getElementById(id1+i).style.left = v + c + "vw";
 			v = v + 2.5 + c;
 		}else{
-			document.getElementById("buttonplace").innerHTML = document.getElementById("buttonplace").innerHTML + '<button class="btni1" id="' + id1 + i + '" type="submit">' + i + '</button>';
+			document.getElementById("buttonplace").innerHTML = document.getElementById("buttonplace").innerHTML + '<button class="btni1" id="' + id1 + i + '" value='+i+' onClick=btnnav(this.value) type="submit">' + i + '</button>';
 			document.getElementById(id1+i).style.left = k + .5 + "vw";
 			k = k + 2.5 + c;
 		}
@@ -394,26 +395,28 @@ function buttonplace(){
 	document.getElementById("navplace").style.left = "0vw";
 	setTimeout(tranof,2000);
 	btnchk();
+	buttonshadow(qno);
 }
 function divent(){
 	document.getElementById("quepanel1").style.transition = "1.5s";
 	document.getElementById("quepanel1").style.left = "2vw";
 }
 function navleft(){
+	document.getElementById("left1").disabled = true;
 	document.getElementById("left1").style.boxShadow="none";
 	if(divchk == 1){
 		document.getElementById("quepanel2").style.left = "-60vw";
 		document.getElementById("quepanel1").style.transition = "1s";
 		document.getElementById("quepanel1").style.left = "160vw";
-		setTimeout(navleftsettle,300);
-		setTimeout(tranof,1300);
+		setTimeout(navleftsettle,100);
+		setTimeout(tranof,1200);
 		divchk = 2;
 	}else{
 		document.getElementById("quepanel1").style.left = "-60vw";
 		document.getElementById("quepanel2").style.transition = "1s";
 		document.getElementById("quepanel2").style.left = "160vw";
-		setTimeout(navleftsettle,300);
-		setTimeout(tranof,1300);
+		setTimeout(navleftsettle,100);
+		setTimeout(tranof,1200);
 		divchk = 1;
 	}
 }
@@ -431,9 +434,11 @@ function navleftsettle(){
 		document.getElementById("quenum2").innerHTML = qno;
 	}
 	btnchk();
+	buttonshadow(qno);
 }
 function navright(){
-	document.getElementById("right1").style.boxShadow="none";
+	document.getElementById("right1").disabled = true;
+	document.getElementById("right1").style.boxShadow = "none";
 	if(divchk == 1){
 		document.getElementById("quepanel1").style.left = "-60vw";
 		document.getElementById("quepanel1").style.transition = "1s";
@@ -464,20 +469,88 @@ function navrightsettle(){
 		document.getElementById("quenum2").innerHTML = qno;
 	}
 	btnchk();
+	buttonshadow(qno);
 }
 function btnchk(){
 	if(qno >= 50){
-		document.getElementById("right1").disabled = true;
 		document.getElementById("right1").style.boxShadow = "none";
 	}else{
-		document.getElementById("right1").disabled =  false;
 		document.getElementById("right1").style.boxShadow = "0 2px 2px 1px grey";
 	}
 	if(qno <= 1){
-		document.getElementById("left1").disabled = true;
 		document.getElementById("left1").style.boxShadow = "none";
 	}else{
-		document.getElementById("left1").disabled = false;
 		document.getElementById("left1").style.boxShadow = "0 2px 2px 1px grey";
 	}
+	setTimeout(btnability,1200);
+}
+function buttonshadow(kar){
+	var i=1;
+	var id1 = "btnplid";
+	for(i=1;i<=50;i++){
+		document.getElementById(id1+i).style.boxShadow = "0 2px 2px 1px grey";
+		document.getElementById(id1+i).disabled = false;
+	}
+	document.getElementById(id1+kar).style.boxShadow = "none";
+	document.getElementById(id1+kar).disabled = true;
+}
+function btnability(){
+	if(qno >= 50){
+		document.getElementById("right1").disabled = true;
+	}else{
+		document.getElementById("right1").disabled =  false;
+	}
+	if(qno <= 1){
+		document.getElementById("left1").disabled = true;
+	}else{
+		document.getElementById("left1").disabled = false;
+	}
+}
+function btnnav(a){
+	if(divchk == 1){
+		document.getElementById("quepanel2").style.top = "-25vw";
+		document.getElementById("quepanel2").style.left = "2vw";
+		divchk = 2;
+	}else{
+		document.getElementById("quepanel1").style.top = "-25vw";
+		document.getElementById("quepanel1").style.left = "2vw";
+		divchk = 1;
+	}
+	qno1 = qno;
+	qno = a;
+	btnchk();
+	buttonshadow(qno);
+	setTimeout(btnnavsettle,400);
+}
+function btnnavsettle(){
+	if(qno1 < qno){
+		if(divchk == 2){
+			document.getElementById("quepanel2").style.top = "3.5vw";
+			document.getElementById("quepanel2").style.transition = ".6s";
+			document.getElementById("quepanel1").style.left = "-60vw";
+			document.getElementById("quepanel1").style.transition = "1s";
+			document.getElementById("quenum2").innerHTML = qno;
+		}else{
+			document.getElementById("quepanel2").style.left = "-60vw";
+			document.getElementById("quepanel2").style.transition = "1s";
+			document.getElementById("quenum").innerHTML = qno;
+			document.getElementById("quepanel1").style.top = "3.5vw";
+			document.getElementById("quepanel1").style.transition = ".6s";
+		}
+	}else{
+		if(divchk == 2){
+			document.getElementById("quepanel2").style.top = "3.5vw";
+			document.getElementById("quepanel2").style.transition = ".6s";
+			document.getElementById("quepanel1").style.left = "160vw";
+			document.getElementById("quepanel1").style.transition = "1s";
+			document.getElementById("quenum2").innerHTML = qno;
+		}else{
+			document.getElementById("quepanel2").style.left = "160vw";
+			document.getElementById("quepanel2").style.transition = "1s";
+			document.getElementById("quenum").innerHTML = qno;
+			document.getElementById("quepanel1").style.top = "3.5vw";
+			document.getElementById("quepanel1").style.transition = ".6s";
+		}
+	}
+	setTimeout(tranof,1300);
 }

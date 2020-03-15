@@ -7,7 +7,7 @@
 <script src="assets/effect.js"></script>
 </head>
 
-<body onLoad="setTimeout(logoin,100);">
+<body onLoad="setTimeout(logoin,100)">
 	<div id="error1id" class="error1"></div>
 	<div class="war1" id="war1id">
 		<img src="assets/owlcom.jpg" class="war1_img">
