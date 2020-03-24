@@ -27,6 +27,7 @@
 	<div id="logo2" class="login_container">
 		<img src="assets/my logo2.png" class="img_container" id="img_con1">
 		<p id="menutxt1">Main Menu</p><p id="menutxt2">Success!</p>
+		<button type=submit class="subbtn" id="subbtnid" onClick="timestop()">Submit All</button>
 	</div>
 	<div class="smenu" id="smenuid">
 		<div class="smenu1" id="smenu1id">
@@ -44,7 +45,7 @@
 			<input type="text" id="i1" class="inp1" >
 			<p class="smenu2_3" id="smenu2_3id">Table Name</p>
 			<input type="text" id="i2" class="inp2">
-			<button class="btn2" id="b2" onClick="menu1shrnk()">Proceed!</button>
+			<button class="btn2" id="b2" onClick="menu1chk1()">Proceed!</button>
 			<p class="smenu2_4" id="smenu2_4id">*New databases must have 50 QUESTIONS with 4 OPTIONS and answer in 5<sup>TH</sup> column</p>
 		</div>
 		
@@ -76,34 +77,34 @@
 	<div id="navplace">
 		<button id="left1" type="submit" onclick="navleft()">< Previous</button>
 		<button id="right1" type="submit" onclick="navright()">Next ></button>
-		<button id="submit1" type="submit">Submit</button>
+		<button id="submit1" type="submit" onClick="submit1()">Submit</button>
 	</div>
 	<div class="quepanel" id="quepanel1">
 		<p class="que1-1">Question No. : -</p>
 		<p id="quenum">1</p>
 		<div class="quesum">
-			<p class="quesim">Here is a question which will need to be answered and users have to choose the right options from below i mean i can write more of this sentence to see if it will effect on it here are some text</p>	
+			<p class="quesim" id="quesim1"></p>	
 		</div>
 		<div class="options1" id="option1">
 			<p class="opthead">---Options---</p>
-			<button class="optbtn" id="opt1">Only one method can be called using a delegate.</button>
-			<button class="optbtn" id="opt2">Hey this is second button</button>
-			<button class="optbtn" id="opt3">hey This is Third button</button>
-			<button class="optbtn" id="opt4">Hey this is Fourth Button</button>
+			<button class="optbtn" value="1" id="opt1" onClick="opbtn(this.value)"></button>
+			<button class="optbtn" value="2" id="opt2" onClick="opbtn(this.value)"></button>
+			<button class="optbtn" value="3" id="opt3" onClick="opbtn(this.value)"></button>
+			<button class="optbtn" value="4" id="opt4" onClick="opbtn(this.value)"></button>
 		</div>
 	</div>
 	<div class="quepanel" id="quepanel2">
 		<p class="que1-1">Question No. : -</p>
-		<p id="quenum2">1</p>
-		<div class="quesum">
-			<p class="quesim">Here is a question which will need to be answered and users have to choose the right options from below i mean i can write more of this sentence to see if it will effect on it here are some text</p>	
+		<p id="quenum2"></p>
+		<div class="quesum" >
+			<p class="quesim" id="quesim2"></p>	
 		</div>
 		<div class="options1" id="option2">
 			<p class="opthead">---Options---</p>
-			<button class="optbtn" id="opt12">Only one method can be called using a delegate.</button>
-			<button class="optbtn" id="opt22">Hey this is second button</button>
-			<button class="optbtn" id="opt32">hey This is Third button</button>
-			<button class="optbtn" id="opt42">Hey this is Fourth Button</button>
+			<button class="optbtn" value="1" id="opt10" onClick="opbtn(this.value)"></button>
+			<button class="optbtn" value="2" id="opt20" onClick="opbtn(this.value)"></button>
+			<button class="optbtn" value="3" id="opt30" onClick="opbtn(this.value)"></button>
+			<button class="optbtn" value="4" id="opt40" onClick="opbtn(this.value)"></button>
 		</div>
 	</div>
 </body>

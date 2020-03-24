@@ -530,7 +530,7 @@ body {
 	position: absolute;
 	height: 6.8vw;
 	width: 75vw;
-	top : 25vw;
+	top : 30vw;
 	right: -80vw;
 	background-color: white;
 	box-shadow: 0 5px 4px 1px grey;
@@ -586,7 +586,7 @@ body {
 	position: absolute;
 	height: 6.8vw;
 	width: 22vw;
-	top : 25vw;
+	top : 30vw;
 	left: -25vw;
 	background-color: white;
 	box-shadow: 0 5px 4px 1px grey;
@@ -657,7 +657,7 @@ body {
 }
 .quepanel{
 	position: absolute;
-	height: 21vw;
+	height: 25vw;
 	left: -60vw;
 	top: 3.5vw;
 	width: 50vw;
@@ -731,11 +731,13 @@ body {
 .optbtn{
 	position: absolute;
 	width: 24vw;
-	height: 3.5vw;
+	height: 5vw;
 	font-size: 1vw;
 	background-color: #E0E5Eb;
 	border: none;
 	box-shadow: 0 2px 2px 1px grey;
+	font-weight: bolder;
+	color: #4D6178;
 }
 .optbtn:active{
 	box-shadow: none;
@@ -749,27 +751,27 @@ body {
 	left: 25.3vw;
 }
 #opt3{
-	top: 6.3vw;
+	top: 8vw;
 	left: .5vw;
 }
 #opt4{
-	top: 6.3vw;
+	top: 8vw;
 	left: 25.3vw;
 }
-#opt12{
+#opt10{
 	top: 2vw;
 	left: .5vw;
 }
-#opt22{
+#opt20{
 	top: 2vw;
 	left: 25.3vw;
 }
-#opt32{
-	top: 6.3vw;
+#opt30{
+	top: 8vw;
 	left: .5vw;
 }
-#opt42{
-	top: 6.3vw;
+#opt40{
+	top: 8vw;
 	left: 25.3vw;
 }
 #quenum2{
@@ -781,4 +783,22 @@ body {
 	color: #4D6178;
 	left: 11vw;
 	top: .4vw;
+}
+.subbtn{
+	position: absolute;
+	font-size: 1.5vw;
+	padding: .5vw 2vw;
+	background-color: #66B032;
+	border: none;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 2px 2px 1px grey;
+	left: 115vw;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 15vw;
+}
+.subbtn:hover{
+	cursor: pointer;
+	background-color: #6BC62A;
 }
