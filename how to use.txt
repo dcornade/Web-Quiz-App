@@ -2,4 +2,4 @@
 
 2#// Import table data into database using import.
 
-3#// Start the application with navigating to wamp server and going to desired folder.
+3#// Start the application with navigating to wamp(i used xaamp) server and going to folder where it is.

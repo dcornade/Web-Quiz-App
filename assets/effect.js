@@ -1,4 +1,5 @@
 // JavaScript Document
+//Created By: - Broken Owl
 var menu1_chk=1;
 var sname = "";
 var roll = "";
@@ -380,7 +381,7 @@ function buttonplacecalc(){
 }
 function buttonplace(){
 	document.getElementById("buttonplace").style.transition = "2s";
-	document.getElementById("buttonplace").style.right = "0vw";
+	document.getElementById("buttonplace").style.left = "25vw";
 	document.getElementById("navplace").style.transition = ".6s";
 	document.getElementById("navplace").style.left = "0vw";
 	setTimeout(tranof,2000);
@@ -855,6 +856,8 @@ function subpos(){
 }
 function suball(){
 	document.getElementById("subbtnid").disabled = true;
+	document.getElementById("submit1").disabled = true;
+	document.getElementById("submit1").style.boxShadow = "none";
 	for(var i=1;i<5;i++){
 		if(divchk==1){
 			document.getElementById("opt"+i).style.boxShadow= "none";

@@ -1,8 +1,9 @@
 @charset "utf-8";
+/*Created By: - Broken Owl*/
 body {
 	margin : 0vh 0vw;
 	background-color : #BDD6E0; 
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 	overflow-x: hidden;
 }
 .compdesc{
@@ -531,7 +532,7 @@ body {
 	height: 6.8vw;
 	width: 75vw;
 	top : 30vw;
-	right: -80vw;
+	left: 176vw;
 	background-color: white;
 	box-shadow: 0 5px 4px 1px grey;
 	z-index: 0;
@@ -607,9 +608,6 @@ body {
 	color: #4D6178;
 	box-shadow: 0 2px 2px 1px grey;
 }
-#left1:active{
-	box-shadow: none;
-}
 #left1:hover{
 	cursor: pointer;
 }
@@ -627,9 +625,6 @@ body {
 	border: none;
 	color: #4D6178;
 	box-shadow: 0 2px 2px 1px grey;
-}
-#right1:active{
-	box-shadow: none;
 }
 #right1:hover{
 	cursor: pointer;
@@ -650,10 +645,6 @@ body {
 }
 #submit1:hover{
 	cursor: pointer;
-	background-color: #6BC62A;
-}
-#submit1:active{
-	box-shadow: none;
 }
 .quepanel{
 	position: absolute;
@@ -800,5 +791,4 @@ body {
 }
 .subbtn:hover{
 	cursor: pointer;
-	background-color: #6BC62A;
 }
