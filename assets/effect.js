@@ -9,6 +9,7 @@ var clake;
 var divchk = 1;
 var qno = 1;
 var qno1;
+document.body.onLoad = setTimeout(logoin,100);
 function logoin(){
 	phpstrt();
 	izero();
