@@ -1,5 +1,0 @@
-1#// Create a database using phpmyadmin in the name of database file that is 'owlbase'.
-
-2#// Import table data into database using import.
-
-3#// Start the application with navigating to wamp(i used xaamp) server and going to folder where it is.
