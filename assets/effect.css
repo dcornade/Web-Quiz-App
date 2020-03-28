@@ -48,6 +48,9 @@ body {
 	display: block;
 	float: left;
 }
+.img_container:hover{
+	cursor: pointer;
+}
 .login_container p {
 	float: left;
 	font-size: 1.8vw;

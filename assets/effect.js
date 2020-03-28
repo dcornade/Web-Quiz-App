@@ -899,3 +899,6 @@ function submit2(a){
 	sub2.open("GET", "assets/phpsuball.php?q="+a, true);
 	sub2.send();
 }
+function rel(){
+	location.reload();
+}
