@@ -610,11 +610,13 @@ function phpcon(){
 	var con = new XMLHttpRequest();
 	con.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200){
-			if(this.responseText=="yes"){
-				menu1shrnk();
-			}else{
-				errorlog();
-				setTimeout(errorlogmenubck,100);
+			if(this.responseText !== undefined){
+				if(this.responseText=="yes"){
+						menu1shrnk();
+				}else{
+							errorlog();
+							setTimeout(errorlogmenubck,100);
+				}
 			}
 		}
 	};
@@ -630,10 +632,12 @@ function phpquein(a){
 	var quein = new XMLHttpRequest();
 	quein.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
-			if(divchk==1){
-				document.getElementById("quesim1").innerHTML=this.responseText;
-			}else{
-				document.getElementById("quesim2").innerHTML=this.responseText;
+			if(this.responseText !== undefined){
+				if(divchk==1){
+					document.getElementById("quesim1").innerHTML=this.responseText;
+				}else{
+					document.getElementById("quesim2").innerHTML=this.responseText;
+				}
 			}
 		}
 	};
@@ -643,11 +647,13 @@ function phpquein(a){
 function opt1(a){
 	var opt1in = new XMLHttpRequest();
 	opt1in.onreadystatechange = function() {
-		if(divchk==1){
-				document.getElementById("opt1").innerHTML=this.responseText;
+		if(this.responseText !== undefined){
+			if(divchk==1){
+					document.getElementById("opt1").innerHTML=this.responseText;
 			}else{
 				document.getElementById("opt10").innerHTML=this.responseText;
 			}
+		}
 	};
 	opt1in.open("GET", "assets/phpopt1in.php?a="+a, true);
 	opt1in.send();
@@ -655,11 +661,13 @@ function opt1(a){
 function opt2(a){
 	var opt1in = new XMLHttpRequest();
 	opt1in.onreadystatechange = function() {
-		if(divchk==1){
+		if(this.responseText !== undefined){
+			if(divchk==1){
 				document.getElementById("opt2").innerHTML=this.responseText;
 			}else{
 				document.getElementById("opt20").innerHTML=this.responseText;
 			}
+		}
 	};
 	opt1in.open("GET", "assets/phpopt2in.php?a="+a, true);
 	opt1in.send();
@@ -667,11 +675,13 @@ function opt2(a){
 function opt3(a){
 	var opt1in = new XMLHttpRequest();
 	opt1in.onreadystatechange = function() {
-		if(divchk==1){
+		if(this.responseText !== undefined){
+			if(divchk==1){
 				document.getElementById("opt3").innerHTML=this.responseText;
 			}else{
 				document.getElementById("opt30").innerHTML=this.responseText;
 			}
+		}
 	};
 	opt1in.open("GET", "assets/phpopt3in.php?a="+a, true);
 	opt1in.send();
@@ -679,11 +689,13 @@ function opt3(a){
 function opt4(a){
 	var opt1in = new XMLHttpRequest();
 	opt1in.onreadystatechange = function() {
-		if(divchk==1){
+		if(this.responseText !== undefined){
+			if(divchk==1){
 				document.getElementById("opt4").innerHTML=this.responseText;
 			}else{
 				document.getElementById("opt40").innerHTML=this.responseText;
 			}
+		}
 	};
 	opt1in.open("GET", "assets/phpopt4in.php?a="+a, true);
 	opt1in.send();
@@ -691,8 +703,10 @@ function opt4(a){
 function optake(a){
 	var optake = new XMLHttpRequest();
 	optake.onreadystatechange = function(){
-		document.getElementById("btnplid"+qno).style.backgroundColor= "#E0E5Eb";
-		document.getElementById("btnplid"+qno).style.color= "#4D6178";
+		if(this.responseText !== undefined){
+			document.getElementById("btnplid"+qno).style.backgroundColor= "#E0E5Eb";
+			document.getElementById("btnplid"+qno).style.color= "#4D6178";
+		}
 	};
 	optake.open("GET", "assets/phpoptake.php?a="+a+"&qno="+qno, true);
 	optake.send();
@@ -700,41 +714,43 @@ function optake(a){
 function optpos(){
 	var optpos = new XMLHttpRequest();
 	optpos.onreadystatechange = function(){
-		if(this.responseText==0){
-			for(var i=1;i<5;i++){
-				if(divchk==1){
-					document.getElementById("opt"+i).style.backgroundColor= "#E0E5Eb";
-					document.getElementById("opt"+i).style.boxShadow= "0 2px 2px 1px grey";
-					document.getElementById("opt"+i).disabled= false;
-					document.getElementById("opt"+i).style.color = "#4D6178";
-				}else{
-					document.getElementById("opt"+i+"0").style.backgroundColor= "#E0E5Eb";
-					document.getElementById("opt"+i+"0").style.boxShadow= "0 2px 2px 1px grey";
-					document.getElementById("opt"+i+"0").disabled= false;
-					document.getElementById("opt"+i+"0").style.color = "#4D6178";
+		if(this.responseText !== undefined){
+			if(this.responseText==0){
+				for(var i=1;i<5;i++){
+					if(divchk==1){
+						document.getElementById("opt"+i).style.backgroundColor= "#E0E5Eb";
+						document.getElementById("opt"+i).style.boxShadow= "0 2px 2px 1px grey";
+						document.getElementById("opt"+i).disabled= false;
+						document.getElementById("opt"+i).style.color = "#4D6178";
+					}else{
+						document.getElementById("opt"+i+"0").style.backgroundColor= "#E0E5Eb";
+						document.getElementById("opt"+i+"0").style.boxShadow= "0 2px 2px 1px grey";
+						document.getElementById("opt"+i+"0").disabled= false;
+						document.getElementById("opt"+i+"0").style.color = "#4D6178";
+					}
 				}
-			}
-		}else{
-			for(i=1;i<5;i++){
-				if(divchk==1){
-					document.getElementById("opt"+i).style.boxShadow= "0 2px 2px 1px grey";
-					document.getElementById("opt"+i).disabled= false;
-					document.getElementById("opt"+i).style.color = "#4D6178";
-				}else{
-					document.getElementById("opt"+i+"0").style.boxShadow= "0 2px 2px 1px grey";
-					document.getElementById("opt"+i+"0").disabled= false;
-					document.getElementById("opt"+i+"0").style.color = "#4D6178";
-				}
-			}
-			if(divchk==1){
-				document.getElementById("opt"+this.responseText).style.boxShadow= "none";
-				document.getElementById("opt"+this.responseText).disabled= true;
 			}else{
-				document.getElementById("opt"+this.responseText+"0").style.boxShadow= "none";
-				document.getElementById("opt"+this.responseText+"0").disabled= true;
+				for(i=1;i<5;i++){
+					if(divchk==1){
+						document.getElementById("opt"+i).style.boxShadow= "0 2px 2px 1px grey";
+						document.getElementById("opt"+i).disabled= false;
+						document.getElementById("opt"+i).style.color = "#4D6178";
+					}else{
+						document.getElementById("opt"+i+"0").style.boxShadow= "0 2px 2px 1px grey";
+						document.getElementById("opt"+i+"0").disabled= false;
+						document.getElementById("opt"+i+"0").style.color = "#4D6178";
+					}
+				}
+				if(divchk==1){
+					document.getElementById("opt"+this.responseText).style.boxShadow= "none";
+					document.getElementById("opt"+this.responseText).disabled= true;
+				}else{
+					document.getElementById("opt"+this.responseText+"0").style.boxShadow= "none";
+					document.getElementById("opt"+this.responseText+"0").disabled= true;
+				}
+				document.getElementById("submit1").style.boxShadow= "0 2px 2px 1px grey";
+				document.getElementById("submit1").disabled = false;
 			}
-			document.getElementById("submit1").style.boxShadow= "0 2px 2px 1px grey";
-			document.getElementById("submit1").disabled = false;
 		}
 	};
 	optpos.open("GET", "assets/phpoptpos.php?qno="+qno, true);
@@ -744,9 +760,10 @@ function submit1(){
 	var bun1 = new XMLHttpRequest();
 	bun1.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200){
-			document.getElementById("submit1").style.boxShadow= "none";
-			document.getElementById("submit1").disabled = true;
-			for( var i=1;i<5;i++){
+			if(this.responseText !== undefined){
+				document.getElementById("submit1").style.boxShadow= "none";
+				document.getElementById("submit1").disabled = true;
+				for( var i=1;i<5;i++){
 					if(divchk==1){
 						document.getElementById("opt"+i).style.boxShadow= "none";
 						document.getElementById("opt"+i).disabled= true;
@@ -755,14 +772,15 @@ function submit1(){
 						document.getElementById("opt"+i+"0").disabled= true;
 					}
 				}
-			if(this.responseText=="1"){
-				riphp();
-				document.getElementById("btnplid"+qno).style.backgroundColor= "#66B032";
-				document.getElementById("btnplid"+qno).style.color= "#FFFFFF";
-			}else{
-				wrophp();
-				document.getElementById("btnplid"+qno).style.backgroundColor= "#FE2712";
-				document.getElementById("btnplid"+qno).style.color= "#FFFFFF";
+				if(this.responseText=="1"){
+					riphp();
+					document.getElementById("btnplid"+qno).style.backgroundColor= "#66B032";
+					document.getElementById("btnplid"+qno).style.color= "#FFFFFF";
+				}else{
+					wrophp();
+					document.getElementById("btnplid"+qno).style.backgroundColor= "#FE2712";
+					document.getElementById("btnplid"+qno).style.color= "#FFFFFF";
+				}
 			}
 		}
 	};
@@ -773,12 +791,14 @@ function riphp(){
 	var ri=new XMLHttpRequest();
 	ri.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			if(divchk==1){
-				document.getElementById("opt"+this.responseText).style.backgroundColor = "#66B032";
-				document.getElementById("opt"+this.responseText).style.color = "#FFFFFF";
-			}else{
-				document.getElementById("opt"+this.responseText+"0").style.backgroundColor = "#66B032";
-				document.getElementById("opt"+this.responseText+"0").style.color = "#FFFFFF";
+			if(this.responseText !== undefined){
+				if(divchk==1){
+					document.getElementById("opt"+this.responseText).style.backgroundColor = "#66B032";
+					document.getElementById("opt"+this.responseText).style.color = "#FFFFFF";
+				}else{
+					document.getElementById("opt"+this.responseText+"0").style.backgroundColor = "#66B032";
+					document.getElementById("opt"+this.responseText+"0").style.color = "#FFFFFF";
+				}
 			}
 		}
 	};
@@ -788,14 +808,16 @@ function riphp(){
 function wrophp(){
 	var wro=new XMLHttpRequest();
 	wro.onreadystatechange = function(){
-		if(divchk==1){
-			document.getElementById("opt"+this.responseText).style.backgroundColor = "#FE2712";
-			document.getElementById("opt"+this.responseText).style.color = "#FFFFFF";
-		}else{
-			document.getElementById("opt"+this.responseText+"0").style.backgroundColor = "#FE2712";
-			document.getElementById("opt"+this.responseText+"0").style.color = "#FFFFFF";
+		if(this.responseText !== undefined){
+			if(divchk==1){
+				document.getElementById("opt"+this.responseText).style.backgroundColor = "#FE2712";
+				document.getElementById("opt"+this.responseText).style.color = "#FFFFFF";
+			}else{
+				document.getElementById("opt"+this.responseText+"0").style.backgroundColor = "#FE2712";
+				document.getElementById("opt"+this.responseText+"0").style.color = "#FFFFFF";
+			}
+			riphp();
 		}
-		riphp();
 	};
 	wro.open("GET", "assets/phpwro.php?qno="+qno, true);
 	wro.send();
@@ -804,10 +826,12 @@ function subchk(){
 	var subchk = new XMLHttpRequest();
 	subchk.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			if(this.responseText==1){
-				subpos();
-			}else{
-				optpos();
+			if(this.responseText !== undefined){
+				if(this.responseText==1){
+					subpos();
+				}else{
+					optpos();
+				}
 			}
 		}
 	};
@@ -818,20 +842,21 @@ function subpos(){
 	var sbp = new XMLHttpRequest();
 	sbp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			for(var i=1;i<5;i++){
-				if(divchk==1){
-					document.getElementById("opt"+i).style.backgroundColor= "#E0E5Eb";
-					document.getElementById("opt"+i).style.color = "#4D6178";
-					document.getElementById("opt"+i).style.boxShadow= "none";
-					document.getElementById("opt"+i).disabled= true;
-				}else{
-					document.getElementById("opt"+i+"0").style.backgroundColor= "#E0E5Eb";
-					document.getElementById("opt"+i+"0").style.color = "#4D6178";
-					document.getElementById("opt"+i+"0").style.boxShadow= "none";
-					document.getElementById("opt"+i+"0").disabled= true;
+			if(this.responseText !== undefined){
+				for(var i=1;i<5;i++){
+					if(divchk==1){
+						document.getElementById("opt"+i).style.backgroundColor= "#E0E5Eb";
+						document.getElementById("opt"+i).style.color = "#4D6178";
+						document.getElementById("opt"+i).style.boxShadow= "none";
+						document.getElementById("opt"+i).disabled= true;
+					}else{
+						document.getElementById("opt"+i+"0").style.backgroundColor= "#E0E5Eb";
+						document.getElementById("opt"+i+"0").style.color = "#4D6178";
+						document.getElementById("opt"+i+"0").style.boxShadow= "none";
+						document.getElementById("opt"+i+"0").disabled= true;
+					}
 				}
-			}
-			for(i=1;i<5;i++){
+				for(i=1;i<5;i++){
 					if(divchk==1){
 						document.getElementById("opt"+i).style.boxShadow= "none";
 						document.getElementById("opt"+i).disabled= true;
@@ -840,10 +865,11 @@ function subpos(){
 						document.getElementById("opt"+i+"0").disabled= true;
 					}
 				}
-			if((this.responseText==1)||(this.responseText==3)){
-				riphp();
-			}else{
-				wrophp();
+				if((this.responseText==1)||(this.responseText==3)){
+					riphp();
+				}else{
+					wrophp();
+				}
 			}
 		}
 	};
@@ -872,23 +898,24 @@ function submit2(a){
 	var sub2 = new XMLHttpRequest();
 	sub2.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status==200){
-			if(a==qno){
-				if(this.responseText==0){
-					wrophp();
-				}else{
-					riphp();
+			if(this.responseText !== undefined){
+				if(a==qno){
+					if(this.responseText==0){
+						wrophp();
+					}else{
+						riphp();
+					}
 				}
-			}
-			if(this.responseText==0){
-				document.getElementById("btnplid"+a).style.backgroundColor= "#FE2712";
-				document.getElementById("btnplid"+a).style.color= "#FFFFFF";
-				
-			}else if(this.responseText==1){
-				document.getElementById("btnplid"+a).style.backgroundColor= "#66B032";
-				document.getElementById("btnplid"+a).style.color= "#FFFFFF";
-			}else{
-				document.getElementById("btnplid"+a).style.backgroundColor= "#E0E5Eb";
-				document.getElementById("btnplid"+a).style.color= "#4D6178";
+				if(this.responseText==0){
+					document.getElementById("btnplid"+a).style.backgroundColor= "#FE2712";
+					document.getElementById("btnplid"+a).style.color= "#FFFFFF";
+				}else if(this.responseText==1){
+					document.getElementById("btnplid"+a).style.backgroundColor= "#66B032";
+					document.getElementById("btnplid"+a).style.color= "#FFFFFF";
+				}else{
+					document.getElementById("btnplid"+a).style.backgroundColor= "#E0E5Eb";
+					document.getElementById("btnplid"+a).style.color= "#4D6178";
+				}
 			}
 		}
 	};
