@@ -292,7 +292,7 @@ function header1(){
 	document.getElementById("clogo").style.display= "none";
 	document.getElementById("clogop").style.display= "none";
 	document.getElementById("smenuid").style.display= "none";
-	document.getElementById("img_con1").style.paddingLeft= ".5vw";
+	document.getElementById("img_con1").style.left= ".5vw";
 	document.getElementById("menutxt2").innerHTML= "Test Menu";
 	document.getElementById("img_con1").style.transition= ".6s";
 	document.getElementById("menutxt2").style.left= "4vw";
@@ -316,6 +316,7 @@ function nameout(){
 	if(roll==""){
 		roll = "person too good to give roll";
 	}
+	document.getElementById("buttonplace").style.display = "block";
 	setTimeout(nameshow,600);
 	setTimeout(timershow,600);
 }
@@ -327,7 +328,6 @@ function nameshow(){
 	document.getElementById("sname").innerHTML= sname;
 	document.getElementById("rnumber").innerHTML= roll;
 	buttonplacecalc();
-	buttonplace();
 	buttonplace();
 	divent();
 }
@@ -382,7 +382,7 @@ function buttonplacecalc(){
 }
 function buttonplace(){
 	document.getElementById("buttonplace").style.transition = "2s";
-	document.getElementById("buttonplace").style.left = "25vw";
+	document.getElementById("buttonplace").style.right = "0vw";
 	document.getElementById("navplace").style.transition = ".6s";
 	document.getElementById("navplace").style.left = "0vw";
 	setTimeout(tranof,2000);
@@ -623,11 +623,6 @@ function phpcon(){
 }
 function phpque(){
 	var que = new XMLHttpRequest();
-	que.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200){
-			
-		}
-	};
 	que.open("GET", "assets/phpque.php", true);
 	que.send();
 }

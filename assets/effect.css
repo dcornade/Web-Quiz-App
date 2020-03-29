@@ -6,6 +6,7 @@ body {
 	/*box-sizing: border-box;*/
 	overflow-x: hidden;
 	min-height: 100%;
+	width: 100vw;
 }
 .compdesc{
 	position: absolute;
@@ -42,12 +43,13 @@ body {
 	border-top-right-radius: .2vw;
 }
 .login_container .img_container{
-	padding-top: .5vw;
-	padding-left: 28.5vw;
+	position: absolute;
 	height: 2vw;
 	width: auto;
 	display: block;
 	float: left;
+	left: 28.5vw;
+	top : .5vw;
 }
 .img_container:hover{
 	cursor: pointer;
@@ -531,17 +533,17 @@ body {
 	padding: 0;
 }
 #buttonplace{
-	overflow: hidden;
 	position: absolute;
 	height: 6.8vw;
 	width: 75vw;
 	top : 30vw;
-	left: 176vw;
+	right: -80vw;
 	background-color: white;
 	box-shadow: 0 5px 4px 1px grey;
 	z-index: 0;
 	padding: 0;
 	margin: 0;
+	display: none;
 	/*border-top-left-radius: .5vw;
 	border-bottom-left-radius: .5vw;*/
 }
